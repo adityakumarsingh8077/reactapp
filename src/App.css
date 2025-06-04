@@ -1,0 +1,85 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;  
+}
+
+.header{
+    font-weight: 800;
+    color: white;
+     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.outer{
+    background-color: rgb(56, 81, 80);
+
+display: flex;
+flex-direction:column;
+height: fit-content;
+width: auto;
+/* gap: 200px; */
+}
+
+
+.inner1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+        
+
+}
+.inner2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.p1{
+
+    
+    width: 200px;
+    
+    height: 250px; 
+    background-color: gray;
+    border-radius: 2px;
+    
+    background-image: url("https://media.istockphoto.com/id/153444470/photo/pizza.jpg?s=612x612&w=0&k=20&c=F0VFx6Cful-Vqwvt8lT0Dz-n3yo67wC7-scdfHiwM6k=");
+    background-size: cover;        
+    background-position: center;    
+    background-repeat: no-repeat;
+}
+
+
+.p2{
+    width: 200px;
+    height: 250px;
+    background-color: gray;
+    border-radius: 2px;
+    
+    background-image: url("https://media.istockphoto.com/id/1077729954/photo/vegetarian-pizza-with-mozzarella-cheese-tomatoes-pepper-spices-and-fresh-arugula-italian.jpg?s=2048x2048&w=is&k=20&c=68FITDxgyeGGYgeb2PUDXrknlIszlxshdMkMMjTuU4M=");
+     object-fit: cover;
+     background-size: cover;         
+     background-position: center;    
+     background-repeat: no-repeat;
+     
+}
+.p3{
+    width: 200px;
+    height: 250px;
+    background-color: gray;
+    border-radius: 2px;
+    
+    background-image: url("https://media.istockphoto.com/id/1013632018/photo/pepperoni-pizza-fresh-homemade-pizza.jpg?s=612x612&w=0&k=20&c=Ytb6J3dXZ6jZnGGafOTdazPaL7sVdS7NT0xcgdxxPgk=");
+    background-size: cover;         
+    background-position: center;    
+    background-repeat: no-repeat;
+}
+.p4{
+    width: 200px;
+    height: 250px;
+    background-color: gray;
+    border-radius: 2px;
+    
+    background-image: url("https://media.istockphoto.com/id/2166290581/photo/close-up-of-pizza.jpg?s=612x612&w=0&k=20&c=3KOAubvnyJYTwus6XOhUWLMKtvCJa3d9PY13btkzCrc=");
+    background-size: cover;         
+    background-position: center;    
+    background-repeat: no-repeat;
+}
