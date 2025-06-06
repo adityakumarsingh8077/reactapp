@@ -143,78 +143,159 @@
 
 
 
+// ***************************************************
+
+
+//   import React, { useState } from 'react';
+//   import "./App2.css"
+
+
+// function App() {
+ 
+    
+//     const[name,setName]=useState("");
+//     const[age,setAge]=useState(0);
+//     const[comment,setComment]=useState("");
+//     const[shipping,setShipping]=useState("");
+//     const[payment,setPayment]=useState("");
+    
+    
+//   function NameHandler(event){
+//     setName(event.target.value);
+
+//   }
+// function AgeHandler(event){
+//   setAge(event.target.value);
+// }
+// function CommentHandler(event){
+//   setComment(event.target.value);
+// }
+
+// function PaymentHandler(event){
+//   setPayment(event.target.value);
+// }
+// function ShippingHandler(event){
+//   setShipping(event.target.value);
+// }
 
 
 
-  import React, { useState } from 'react';
-  import "./App2.css"
+//   return (
+//     <div className='outer'>
+   
+//       <input type="Name:" value={name} onChange={NameHandler} placeholder="name"></input>
+//       <p>name:{name}</p>
+//       <input type="age:"  value={age} onChange={AgeHandler} placeholder='age' ></input>
+//       <p>age:{age}</p>
+//       <textarea name="comment:"  value={comment} onChange={CommentHandler} placeholder='comment'  id="">Comment:</textarea>
+//        <div>
+//         <select value={payment} onChange={PaymentHandler} >
+//           <option value="">Select the payment method</option>
+//           <option value="visa">visa </option>
+//           <option value="master card">mastercard</option>
+//         </select>
+//         <p>payment method :{payment}</p>
+
+
+//         <p>Shipping :</p>
+//         <input type="radio" onChange={ShippingHandler} value="pickup" checked={shipping=="pickup"}  /> Pick up
+//        <input type="radio" onChange={ShippingHandler} value="delivering" checked={shipping=="delivering"} /> Delivering
+//         </div>
+         
+//          <p>Shipping Status :{shipping}</p>
+
+
+ 
+
+
+
+
+//     </div>
+//   );
+// };
+// export default App;
+
+
+
+
+
+import React, { useState,useSyncExternalStore } from 'react';
+import "./App2.css"
 
 
 function App() {
-  // const [text, setText] = useState('');
-  
-  // const handleChange = (event) => {
-    // setText(event.target.value);
-    
-    const[name,setName]=useState("");
-    const[age,setAge]=useState(0);
-    const[comment,setComment]=useState("");
-    const[shipping,setShipping]=useState("");
-    const[payment,setPayment]=useState("");
-    
-    
-  function NameHandler(event){
-    setName(event.target.value);
+const[food,setFood]=useState(['Pasta','Pizza','VadaPav','Idli'])
 
-  }
-function AgeHandler(event){
-  setAge(event.target.value);
-}
-function CommentHandler(event){
-  setComment(event.target.value);
+
+function Addfooditem(event){
+  const newItem =document.getElementById("foodItem").value
+  document.getElementById("foodItem").value="";
+  setFood(f=>[...f,newItem])
+
 }
 
-function PaymentHandler(event){
-  setPayment(event.target.value);
+function RemoveFoodItem(index){
+  setFood(food.filter((_,i)=>i!==index));
+
 }
-function ShippingHandler(event){
-  setShipping(event.target.value);
-}
+return (
+<div>
+  <p>food list !!!</p>
+<ul>
+  {food.map((ele,idx)=> <li key={idx} onClick={()=>RemoveFoodItem(idx)}>{ele}  </li>
 
+  )}
+</ul>
 
+<input id="foodItem" ></input> 
+<button onClick={Addfooditem}>Add item</button>
+<button>Delete item</button>
+</div>
 
-  return (
-    <div className='outer'>
-   
-      <input type="Name:" value={name} onChange={NameHandler} placeholder="name"></input>
-      <p>name:{name}</p>
-      <input type="age:"  value={age} onChange={AgeHandler} placeholder='age' ></input>
-      <p>age:{age}</p>
-      <textarea name="comment:"  value={comment} onChange={CommentHandler} placeholder='comment'  id="">Comment:</textarea>
-       <div>
-        <select value={payment} onChange={PaymentHandler} >
-          <option value="">Select the payment method</option>
-          <option value="visa">visa </option>
-          <option value="master card">mastercard</option>
-        </select>
-        <p>payment method :{payment}</p>
-
-
-        <p>Shipping :</p>
-        <input type="radio" onChange={ShippingHandler} value="pickup" checked={shipping=="pickup"}  /> Pick up
-       <input type="radio" onChange={ShippingHandler} value="delivering" checked={shipping=="delivering"} /> Delivering
-        </div>
-         
-         <p>Shipping Status :{shipping}</p>
-
-
-      {/* <input type="text" value={text} onChange={handleChange} />
-      <p>You typed: {text}</p> */}
-
-
-
-
-    </div>
-  );
+);
 };
 export default App;
+
+
+
+
+
+// import React, { useState } from 'react';
+// import "./App2.css";
+
+// function App() {
+//   const [food, setFood] = useState(['Pasta', 'Pizza', 'VadaPav', 'Idli']);
+//   const [newItem, setNewItem] = useState("");
+
+//   const addItem = () => {
+//     if (newItem.trim() !== "") {
+//       setFood([...food, newItem]);
+//       setNewItem(""); // Clear input
+//     }
+//   };
+
+//   const deleteItem = () => {
+//     setFood(food.slice(0, -1)); // Removes last item
+//   };
+
+//   return (
+//     <div>
+//       <p>Food list !!!</p>
+//       <ul>
+//         {food.map((ele, idx) => (
+//           <li key={idx}>{ele}</li>
+//         ))}
+//       </ul>
+//       <input
+//         type="text"
+//         value={newItem}
+//         onChange={(e) => setNewItem(e.target.value)}
+//         placeholder="Enter food item"
+//       />
+//       <button onClick={addItem}>Add item</button>
+//       <button onClick={deleteItem}>Delete item</button>
+//     </div>
+//   );
+// }
+
+// export default App;
