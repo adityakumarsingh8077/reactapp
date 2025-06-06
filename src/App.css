@@ -134,7 +134,7 @@ width: auto;
 }
 .p3:hover{
     animation: borderRadiusAnim3 1s ;
-    
+    box-shadow: 0 0 6px rgb(196, 253, 255);    
 }
 
 @keyframes borderRadiusAnim3 {
